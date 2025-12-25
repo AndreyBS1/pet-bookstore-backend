@@ -1,4 +1,4 @@
-namespace PetBookstore.Domain.SeedWork;
+namespace PetBookstore.Experiment.Domain.SeedWork;
 
 public interface IRepository<TEntity> where TEntity : Entity, IAggregateRoot
 {

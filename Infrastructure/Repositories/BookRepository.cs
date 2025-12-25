@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using PetBookstore.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
 
-namespace PetBookstore.Infrastructure.Repositories;
+namespace PetBookstore.Experiment.Infrastructure.Repositories;
 
 public class BookRepository(GlobalDbContext context) : Repository<Book>(context), IBookRepository
 {

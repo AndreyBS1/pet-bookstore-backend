@@ -1,4 +1,4 @@
-namespace PetBookstore.WebAPI.DTOs
+namespace PetBookstore.Experiment.WebAPI.DTOs
 {
     public class GetRangeRequest
     {

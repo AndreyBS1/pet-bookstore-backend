@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using PetBookstore.Domain.AggregatesModel.BookAggregate;
-using PetBookstore.Application.Commands;
-using PetBookstore.Application.Queries;
-using PetBookstore.WebAPI.DTOs;
+using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Experiment.Application.Commands;
+using PetBookstore.Experiment.Application.Queries;
+using PetBookstore.Experiment.WebAPI.DTOs;
 
-namespace PetBookstore.WebAPI.Controllers
+namespace PetBookstore.Experiment.WebAPI.Controllers
 {
     public class BookController(IMediator mediator) : Controller
     {

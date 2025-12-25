@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using PetBookstore.WebAPI.DTOs;
+using PetBookstore.Experiment.WebAPI.DTOs;
 
-namespace PetBookstore.WebAPI.Controllers
+namespace PetBookstore.Experiment.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

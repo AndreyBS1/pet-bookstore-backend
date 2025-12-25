@@ -1,7 +1,7 @@
 using MediatR;
-using PetBookstore.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
 
-namespace PetBookstore.Application.Queries;
+namespace PetBookstore.Experiment.Application.Queries;
 
 public class GetBookRangeQueryHandler(IBookRepository repository) : IRequestHandler<GetBookRangeQuery, List<Book>>
 {
