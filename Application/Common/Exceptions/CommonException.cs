@@ -1,4 +1,4 @@
-namespace PetBookstore.Experiment.Application.Common.Exceptions;
+namespace PetBookstore.Application.Common.Exceptions;
 
 public class CommonException : Exception
 {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PetBookstore.Experiment.Infrastructure;
+using PetBookstore.Infrastructure;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace experiment.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate.Book", b =>
+            modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.BookAggregate.Book", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace experiment.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate.Genre", b =>
+            modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.GenreAggregate.Genre", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -83,14 +83,14 @@ namespace experiment.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate.Genre", b =>
+            modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.GenreAggregate.Genre", b =>
                 {
-                    b.HasOne("PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate.Book", null)
+                    b.HasOne("PetBookstore.Domain.AggregatesModel.BookAggregate.Book", null)
                         .WithMany("Genres")
                         .HasForeignKey("BookID");
                 });
 
-            modelBuilder.Entity("PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate.Book", b =>
+            modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.BookAggregate.Book", b =>
                 {
                     b.Navigation("Genres");
                 });

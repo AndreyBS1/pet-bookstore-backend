@@ -1,4 +1,4 @@
-namespace PetBookstore.Experiment.WebAPI.DTOs;
+namespace PetBookstore.WebAPI.DTOs;
 
 public class CreateBookRequest
 {

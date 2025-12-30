@@ -1,7 +1,7 @@
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Domain.AggregatesModel.BookAggregate;
 
-namespace PetBookstore.Experiment.Application.Commands;
+namespace PetBookstore.Application.Commands;
 
 public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, Book>
 {

@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace PetBookstore.Experiment.Application.Genres.Commands;
+namespace PetBookstore.Application.Genres.Commands;
 
 public class DeleteGenreCommand : IRequest
 {

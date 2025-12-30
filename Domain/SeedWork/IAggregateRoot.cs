@@ -1,3 +1,3 @@
-namespace PetBookstore.Experiment.Domain.SeedWork;
+namespace PetBookstore.Domain.SeedWork;
 
 public interface IAggregateRoot { }

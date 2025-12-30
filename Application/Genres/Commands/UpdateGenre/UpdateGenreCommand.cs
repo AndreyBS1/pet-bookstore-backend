@@ -1,7 +1,7 @@
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
-namespace PetBookstore.Experiment.Application.Genres.Commands;
+namespace PetBookstore.Application.Genres.Commands;
 
 public class UpdateGenreCommand : IRequest<Genre>
 {

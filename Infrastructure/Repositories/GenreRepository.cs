@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
-namespace PetBookstore.Experiment.Infrastructure.Repositories;
+namespace PetBookstore.Infrastructure.Repositories;
 
 public class GenreRepository(GlobalDbContext context) : Repository<Genre>(context), IGenreRepository
 {

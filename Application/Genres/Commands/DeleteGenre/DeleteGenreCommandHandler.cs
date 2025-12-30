@@ -1,8 +1,8 @@
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
-using PetBookstore.Experiment.Application.Common.Exceptions;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Application.Common.Exceptions;
 
-namespace PetBookstore.Experiment.Application.Genres.Commands;
+namespace PetBookstore.Application.Genres.Commands;
 
 public class DeleteGenreCommandHandler(IGenreRepository genreRepository) : IRequestHandler<DeleteGenreCommand>
 {

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using PetBookstore.Experiment.Domain.SeedWork;
+using PetBookstore.Domain.SeedWork;
 
-namespace PetBookstore.Experiment.Infrastructure.Repositories;
+namespace PetBookstore.Infrastructure.Repositories;
 
 public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, IAggregateRoot
 {

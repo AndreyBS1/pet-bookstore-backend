@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using PetBookstore.Experiment.Domain.SeedWork;
-using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Domain.SeedWork;
+using PetBookstore.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
-namespace PetBookstore.Experiment.Infrastructure;
+namespace PetBookstore.Infrastructure;
 
 public class GlobalDbContext(DbContextOptions<GlobalDbContext> options) : DbContext(options), IUnitOfWork
 {

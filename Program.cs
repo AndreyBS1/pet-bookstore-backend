@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PetBookstore.Experiment.Infrastructure;
+using PetBookstore.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

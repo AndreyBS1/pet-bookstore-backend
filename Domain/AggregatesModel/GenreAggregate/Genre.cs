@@ -1,6 +1,6 @@
-using PetBookstore.Experiment.Domain.SeedWork;
+using PetBookstore.Domain.SeedWork;
 
-namespace PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+namespace PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
 public class Genre : Entity, IAggregateRoot
 {

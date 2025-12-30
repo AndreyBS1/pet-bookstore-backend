@@ -1,7 +1,7 @@
-using PetBookstore.Experiment.Domain.SeedWork;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Domain.SeedWork;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
-namespace PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
+namespace PetBookstore.Domain.AggregatesModel.BookAggregate;
 
 public class Book : Entity, IAggregateRoot
 {

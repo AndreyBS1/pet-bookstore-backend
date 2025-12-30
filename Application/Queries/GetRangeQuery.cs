@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace PetBookstore.Experiment.Application.Queries;
+namespace PetBookstore.Application.Queries;
 
 public abstract class GetRangeQuery<TEntity> : IRequest<TEntity>
 {

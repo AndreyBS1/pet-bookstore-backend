@@ -1,4 +1,4 @@
-namespace PetBookstore.Experiment.Domain.SeedWork;
+namespace PetBookstore.Domain.SeedWork;
 
 public abstract class Entity
 {

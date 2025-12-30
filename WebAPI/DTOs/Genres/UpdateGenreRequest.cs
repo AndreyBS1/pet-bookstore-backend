@@ -1,4 +1,4 @@
-namespace PetBookstore.Experiment.WebAPI.DTOs.Genres;
+namespace PetBookstore.WebAPI.DTOs.Genres;
 
 public class UpdateGenreRequest
 {

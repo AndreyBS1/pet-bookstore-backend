@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
-using PetBookstore.Experiment.Application.Genres.Commands;
-using PetBookstore.Experiment.Application.Genres.Queries;
-using PetBookstore.Experiment.WebAPI.DTOs;
-using PetBookstore.Experiment.WebAPI.DTOs.Genres;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Application.Genres.Commands;
+using PetBookstore.Application.Genres.Queries;
+using PetBookstore.WebAPI.DTOs;
+using PetBookstore.WebAPI.DTOs.Genres;
 
-namespace PetBookstore.Experiment.WebAPI.Controllers
+namespace PetBookstore.WebAPI.Controllers
 {
     public class GenreController(IMediator mediator) : Controller
     {

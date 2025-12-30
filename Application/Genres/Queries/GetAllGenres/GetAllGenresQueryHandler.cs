@@ -1,7 +1,7 @@
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
-namespace PetBookstore.Experiment.Application.Genres.Queries;
+namespace PetBookstore.Application.Genres.Queries;
 
 public class GetAllGenresQueryHandler(IGenreRepository repository) : IRequestHandler<GetAllGenresQuery, List<Genre>>
 {

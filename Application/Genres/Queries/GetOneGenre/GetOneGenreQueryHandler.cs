@@ -1,8 +1,8 @@
 using MediatR;
-using PetBookstore.Experiment.Domain.AggregatesModel.GenreAggregate;
-using PetBookstore.Experiment.Application.Common.Exceptions;
+using PetBookstore.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Application.Common.Exceptions;
 
-namespace PetBookstore.Experiment.Application.Genres.Queries;
+namespace PetBookstore.Application.Genres.Queries;
 
 public class GetOneGenreQueryHandler(IGenreRepository repository) : IRequestHandler<GetOneGenreQuery, Genre>
 {

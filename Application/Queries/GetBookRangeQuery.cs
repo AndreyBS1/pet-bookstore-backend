@@ -1,5 +1,5 @@
-using PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
+using PetBookstore.Domain.AggregatesModel.BookAggregate;
 
-namespace PetBookstore.Experiment.Application.Queries;
+namespace PetBookstore.Application.Queries;
 
 public class GetBookRangeQuery : GetRangeQuery<List<Book>> { }

@@ -1,6 +1,6 @@
-using PetBookstore.Experiment.Domain.SeedWork;
+using PetBookstore.Domain.SeedWork;
 
-namespace PetBookstore.Experiment.Domain.AggregatesModel.BookAggregate;
+namespace PetBookstore.Domain.AggregatesModel.BookAggregate;
 
 public interface IBookRepository : IRepository<Book>
 {
