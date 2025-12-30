@@ -24,7 +24,7 @@ public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity :
         EntitySet.Add(entity);
     }
 
-    public Task<TEntity?> GetByIdAsync(int ID)
+    public Task<TEntity?> GetByIDAsync(int ID)
     {
         return EntitySet.FirstOrDefaultAsync(e => e.ID == ID);
     }

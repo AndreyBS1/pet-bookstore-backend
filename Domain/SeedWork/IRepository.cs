@@ -6,7 +6,7 @@ public interface IRepository<TEntity> where TEntity : Entity, IAggregateRoot
 
     public void Add(TEntity entity);
 
-    public Task<TEntity?> GetByIdAsync(int entityID);
+    public Task<TEntity?> GetByIDAsync(int entityID);
 
     public void Update(TEntity entity);
 
