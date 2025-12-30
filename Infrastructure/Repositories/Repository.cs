@@ -6,7 +6,8 @@ namespace PetBookstore.Infrastructure.Repositories;
 public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, IAggregateRoot
 {
     private readonly GlobalDbContext _context;
-    protected readonly DbSet<TEntity> EntitySet;
+
+    protected DbSet<TEntity> EntitySet;
 
     public IUnitOfWork UnitOfWork
     {

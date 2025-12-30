@@ -3,8 +3,13 @@ using PetBookstore.Domain.AggregatesModel.BookAggregate;
 
 namespace PetBookstore.Infrastructure.Repositories;
 
-public class BookRepository(GlobalDbContext context) : Repository<Book>(context), IBookRepository
+public class BookRepository : Repository<Book>, IBookRepository
 {
+    public BookRepository(GlobalDbContext context) : base(context)
+    {
+        this.EntitySet = context.Books;
+    }
+
     public Task<List<Book>> GetRangeAsync(int offset, int limit)
     {
         return EntitySet.Skip(offset).Take(limit).ToListAsync();
