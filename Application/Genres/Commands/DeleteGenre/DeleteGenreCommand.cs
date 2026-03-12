@@ -1,8 +1,5 @@
-using MediatR;
+using PetBookstore.Application.Common.Commands;
 
 namespace PetBookstore.Application.Genres.Commands;
 
-public class DeleteGenreCommand : IRequest
-{
-    public required int ID { get; init; }
-}
+public class DeleteGenreCommand : DeleteEntityCommand { }

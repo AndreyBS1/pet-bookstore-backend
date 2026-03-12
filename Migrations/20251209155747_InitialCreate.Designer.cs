@@ -5,59 +5,59 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PetBookstore.Infrastructure;
+using PetBookstore.Infrastructure.Contexts;
 
 #nullable disable
 
-namespace experiment.Migrations
+namespace PetBookstore.Migrations
 {
-    [DbContext(typeof(GlobalDbContext))]
-    [Migration("20251209155747_InitialCreate")]
-    partial class InitialCreate
+  [DbContext(typeof(GlobalDbContext))]
+  [Migration("20251209155747_InitialCreate")]
+  partial class InitialCreate
+  {
+    /// <inheritdoc />
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+      modelBuilder
+          .HasAnnotation("ProductVersion", "10.0.0")
+          .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+      NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.BookAggregate.Book", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+      modelBuilder.Entity("PetBookstore.Domain.AggregatesModel.BookAggregate.Book", b =>
+          {
+            b.Property<int>("ID")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("Author")
-                        .IsRequired()
-                        .HasColumnType("text");
+            b.Property<string>("Author")
+                      .IsRequired()
+                      .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+            b.Property<DateTime>("CreatedAt")
+                      .HasColumnType("timestamp with time zone");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+            b.Property<decimal>("Price")
+                      .HasColumnType("numeric");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("integer");
+            b.Property<int>("Quantity")
+                      .HasColumnType("integer");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
+            b.Property<string>("Title")
+                      .IsRequired()
+                      .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+            b.Property<DateTime>("UpdatedAt")
+                      .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("ID");
+            b.HasKey("ID");
 
-                    b.ToTable("Books");
-                });
+            b.ToTable("Books");
+          });
 #pragma warning restore 612, 618
-        }
     }
+  }
 }

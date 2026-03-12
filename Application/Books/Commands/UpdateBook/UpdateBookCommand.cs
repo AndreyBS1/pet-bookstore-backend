@@ -1,0 +1,13 @@
+using MediatR;
+using PetBookstore.Domain.AggregatesModel.BookAggregate;
+
+namespace PetBookstore.Application.Books.Commands;
+
+public class UpdateBookCommand : IRequest<Book>
+{
+  public required int ID { get; init; }
+  public required string Title { get; init; }
+  public required string Author { get; init; }
+  public required decimal Price { get; init; }
+  public required int Quantity { get; init; }
+}

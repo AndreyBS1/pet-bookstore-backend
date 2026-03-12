@@ -1,42 +1,30 @@
 using Microsoft.EntityFrameworkCore;
 using PetBookstore.Domain.SeedWork;
+using PetBookstore.Infrastructure.Contexts;
 
 namespace PetBookstore.Infrastructure.Repositories;
 
-public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, IAggregateRoot
+public abstract class Repository<TEntity>(GlobalDbContext context) : IRepository<TEntity> where TEntity : Entity, IAggregateRoot
 {
-    private readonly GlobalDbContext _context;
+  protected DbSet<TEntity> EntitySet = context.Set<TEntity>();
 
-    protected DbSet<TEntity> EntitySet;
+  public void Add(TEntity entity)
+  {
+    EntitySet.Add(entity);
+  }
 
-    public IUnitOfWork UnitOfWork
-    {
-        get => _context;
-    }
+  public Task<TEntity?> GetByIDAsync(int ID)
+  {
+    return EntitySet.FirstOrDefaultAsync(e => e.ID == ID);
+  }
 
-    public Repository(GlobalDbContext context)
-    {
-        _context = context;
-        EntitySet = context.Set<TEntity>();
-    }
+  public void Update(TEntity entity)
+  {
+    EntitySet.Update(entity);
+  }
 
-    public void Add(TEntity entity)
-    {
-        EntitySet.Add(entity);
-    }
-
-    public Task<TEntity?> GetByIDAsync(int ID)
-    {
-        return EntitySet.FirstOrDefaultAsync(e => e.ID == ID);
-    }
-
-    public void Update(TEntity entity)
-    {
-        EntitySet.Update(entity);
-    }
-
-    public void Remove(TEntity entity)
-    {
-        EntitySet.Remove(entity);
-    }
+  public void Remove(TEntity entity)
+  {
+    EntitySet.Remove(entity);
+  }
 }

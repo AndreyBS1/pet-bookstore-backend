@@ -1,21 +1,22 @@
 using MediatR;
+using PetBookstore.Infrastructure;
 using PetBookstore.Domain.AggregatesModel.GenreAggregate;
 
 namespace PetBookstore.Application.Genres.Commands;
 
-public class CreateGenreCommandHandler(IGenreRepository genreRepository) : IRequestHandler<CreateGenreCommand, Genre>
+public class CreateGenreCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<CreateGenreCommand, Genre>
 {
-    public async Task<Genre> Handle(CreateGenreCommand command, CancellationToken cancellationToken)
+  public async Task<Genre> Handle(CreateGenreCommand command, CancellationToken cancellationToken)
+  {
+    var genre = new Genre
     {
-        var genre = new Genre
-        {
-            Label = command.Label
-        };
+      Label = command.Label
+    };
 
-        genreRepository.Add(genre);
+    unitOfWork.Genres.Add(genre);
 
-        await genreRepository.UnitOfWork.SaveChangesAsync(cancellationToken);
+    await unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return genre;
-    }
+    return genre;
+  }
 }

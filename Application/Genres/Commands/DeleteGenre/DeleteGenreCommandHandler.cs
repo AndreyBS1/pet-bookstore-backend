@@ -1,20 +1,20 @@
 using MediatR;
-using PetBookstore.Domain.AggregatesModel.GenreAggregate;
+using PetBookstore.Infrastructure;
 using PetBookstore.Application.Common.Exceptions;
 
 namespace PetBookstore.Application.Genres.Commands;
 
-public class DeleteGenreCommandHandler(IGenreRepository genreRepository) : IRequestHandler<DeleteGenreCommand>
+public class DeleteGenreCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<DeleteGenreCommand>
 {
-    public async Task Handle(DeleteGenreCommand command, CancellationToken cancellationToken)
-    {
-        var genre = await genreRepository.GetByIDAsync(command.ID);
+  public async Task Handle(DeleteGenreCommand command, CancellationToken cancellationToken)
+  {
+    var genre = await unitOfWork.Genres.GetByIDAsync(command.ID);
 
-        if (genre is null)
-            throw new NotFoundException($"Genre with ID {command.ID} not found");
+    if (genre is null)
+      throw new NotFoundException($"Genre with ID {command.ID} not found");
 
-        genreRepository.Remove(genre);
+    unitOfWork.Genres.Remove(genre);
 
-        await genreRepository.UnitOfWork.SaveChangesAsync(cancellationToken);
-    }
+    await unitOfWork.SaveChangesAsync(cancellationToken);
+  }
 }

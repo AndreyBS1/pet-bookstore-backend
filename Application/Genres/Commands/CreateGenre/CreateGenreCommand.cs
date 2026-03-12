@@ -5,5 +5,5 @@ namespace PetBookstore.Application.Genres.Commands;
 
 public class CreateGenreCommand : IRequest<Genre>
 {
-    public required string Label { get; init; }
+  public required string Label { get; init; }
 }

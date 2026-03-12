@@ -2,17 +2,17 @@ namespace PetBookstore.Application.Common.Exceptions;
 
 public class CommonException : Exception
 {
-    private readonly List<string> _errors = new List<string>();
+  private readonly List<string> _errors = [];
 
-    public IReadOnlyCollection<string> Errors => this._errors.AsReadOnly();
+  public IReadOnlyCollection<string> Errors => this._errors.AsReadOnly();
 
-    public CommonException(string message) : base(message)
-    {
-        this._errors.Add(message);
-    }
+  public CommonException(string message) : base(message)
+  {
+    this._errors.Add(message);
+  }
 
-    public CommonException(List<string> messages) : base(string.Join(';', messages))
-    {
-        this._errors.AddRange(messages);
-    }
+  public CommonException(List<string> messages) : base(string.Join(';', messages))
+  {
+    this._errors.AddRange(messages);
+  }
 }

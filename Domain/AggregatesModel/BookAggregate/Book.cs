@@ -5,10 +5,10 @@ namespace PetBookstore.Domain.AggregatesModel.BookAggregate;
 
 public class Book : Entity, IAggregateRoot
 {
-    public required string Title { get; init; } = string.Empty;
-    public required string Author { get; init; } = string.Empty;
-    public required decimal Price { get; init; }
-    public required int Quantity { get; init; }
+  public string Title { get; set; } = string.Empty;
+  public string Author { get; set; } = string.Empty;
+  public decimal Price { get; set; }
+  public int Quantity { get; set; }
 
-    public List<Genre> Genres { get; init; } = new List<Genre>();
+  public List<Genre> Genres { get; init; } = [];
 }
